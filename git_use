@@ -1,0 +1,48 @@
+
+
+git 上传文件的步骤及命令演示
+
+   1. cd /D/...   将gitbash定位到自己习惯存储的位置 
+   2. git clone  https://gitbash.com/xiangminsong/testSong.git 自己仓库创建成功后的网址
+   3. 在我习惯的存储位置创建任意格式文件(例如:test.txt)  使用 ls 命令可以查看到刚才创建的文件
+   4. 输入命令 git add test.txt
+   5. 输入命令 git commit -m "cc" 注:引号里面的内容可以随意改动,只是给刚才上传的文件的一个备注,方便查找而已.
+   6. 输入命令 git push origin master弹出窗口, 填写登录名和密码
+   7. 打开github网站, 找到你创建的库, 就可以看到你刚才创建的文件了
+   
+   
+   ///////git其他命令
+  
+  列出所有本地分支 git branch
+  列出所有远程分支  git branch -r
+  列出所有本地及远程分支 git branch -a
+  新建一个分支,但仍然停留在当前分支 git branch  新分支name
+  新建一个分支, 并且换到该分支 git checkout -b 新分支name
+  切换到指定分支 git checkout 新分支name
+  切换到上一个分支  git checkout -
+  合并指定分支到当前分支 git merge 分支name
+  删除分支 git branch -d 分支name
+   
+ /////////////////
+git命令工具Git Bash 。 
+
+首先在Git Bash中使用cd命令进入对应的本地项目路录，按照下面的命令操作： 
+1、git init 表示在当前的项目目录中生成本地的git管理。
+2、git add . 表示你要提交到github上的文件，如果你要将所有文件都添加上去的话，使用git add . “.”表示添加当前目录中的所有文件。
+
+3、git commit -m “first commit”,表示你对这次提交的注释。
+
+git commit -m “提交的描述信息” 
+如果我们这里不用-m参数的话，git将调到一个文本编译器（通常是vim）来让你输入提交的描述信息
+
+git commit -a -m “提交的描述信息” 
+git commit 命令的-a 选项可只将所有被修改或者已删除的且已经被git管理的文档提交倒仓库中。如果只是修改或者删除了已被Git 管理的文档，是没必要使用git add 命令的。
+
+git commit –-amend 对于已经修改提交过的注释，如果需要修改，可以借助 git commit –-amend 来进行。
+
+4、git remote add origin https://github.com/huangtianyu/mytest 就是项目地址。
+
+5、git push -u origin master 用于将本地分支的更新，推送到远程主机，最后根据提示输入用户名和密码。-u选项指定一个默认主机。这一步可能会提示你： ! [rejected]        master -> master (fetch first)，这事因为git仓库已经有内容了，这时你需要先利用git pull命令同步代码，步骤如下：直接用git pull origin <分支名称（默认master）> 拉下服务器代码，如果没问题即解决了。如果提示：fatal:refusing to merge unrelated histories，这时执行如下命令:git branch --set-upstream-to=origin/<分支名称> master，之后执行git pull origin master --allow-unrelated-histories，即可拉下代码，然后调用git push -u origin master即可上传代码。 
+   
+  
+  
